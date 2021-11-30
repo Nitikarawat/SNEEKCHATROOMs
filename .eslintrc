@@ -15,7 +15,9 @@
       "react/no-danger": [0],
       "no-param-reassign": [0],
       "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn"
+      "react-hooks/exhaustive-deps": "warn",
+      "react/function-component-definition":"off",
+      "no-unused-vars":"off"
     }
   }
   
