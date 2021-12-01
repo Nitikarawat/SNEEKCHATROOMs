@@ -5,7 +5,7 @@ const PrivateRoute = ({children, ...routeProps}) => {
    
    const profile = false;
    if(!profile){
-       return <Redirect to ='/sigin'/> 
+       return <Redirect to ="/sigin" /> ;
       }
 
    return (
