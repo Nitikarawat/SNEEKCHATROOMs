@@ -5,7 +5,7 @@ const PublicRoute = ({children, ...routeProps}) => {
    
    const profile = false;
    if(profile){
-       return <Redirect to ='/'/> 
+       return <Redirect to ='/'/> ;
       }
 
    return (
