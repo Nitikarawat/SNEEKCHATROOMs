@@ -1,13 +1,16 @@
 import React, { Profiler } from "react";
 import { Drawer, Button, Divider } from "rsuite";
 import { useProfile } from "../../context/profile.context";
+import { database } from "../../misc/firebase";
 import EditableInput from "../EditableInput";
+
 
 
 const Dashboard = ({ onSignOut }) =>{
     const {profile} =  useProfile() ;
+    
     const onSave = async (newData) =>{
-
+      
     }
     return(
         <>
