@@ -4,6 +4,9 @@ import Messages from "../../components/chat-window/messages";
 import Top from "../../components/chat-window/top";
 
 const Chat = () =>{
+     
+    
+
     return(
         <>
             <div className="chat-top">
