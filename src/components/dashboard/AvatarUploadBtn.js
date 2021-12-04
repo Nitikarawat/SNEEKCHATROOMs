@@ -88,7 +88,7 @@ const AvatarUploadBtn = () => {
           htmlFor="avatar-upload"
           className="d-block cursor-pointer padded"
         >
-          Select new avatar
+          Select New Profile Photo
           <input
             id="avatar-upload"
             type="file"

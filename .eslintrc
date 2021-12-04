@@ -20,7 +20,8 @@
       "no-unused-vars":"off",
       "arrow-body-style":"off",
       "import/no-extraneous-dependencies":"off",
-      "react/jsx-no-constructed-context-values":"off"
+      "react/jsx-no-constructed-context-values":"off",
+      "no-useless-return":"off"
         }
   }
   
