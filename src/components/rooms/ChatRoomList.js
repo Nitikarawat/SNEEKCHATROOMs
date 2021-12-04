@@ -6,7 +6,16 @@ const ChatRoomList = ({aboveElHeight}) =>
 {
     return(
         <div>
-            <Nav appearance="subtle" vertical reversed className="overflow-y-scroll custom-scroll" style={{height:`calc(100% - ${aboveElHeight}px)`}}>            
+            <Nav appearance="subtle" 
+            vertical 
+            reversed 
+            className="overflow-y-scroll custom-scroll" 
+            style={
+                {
+                    height: `calc(100% - ${aboveElHeight}px)`
+                }
+                    }>
+
                 <Nav.Item>
                     <RoomItem />
                 </Nav.Item>

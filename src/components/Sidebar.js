@@ -7,9 +7,9 @@ import ChatRoomList from './rooms/ChatRoomList';
 const Sidebar = () =>{
     
     const topSideBarRef = useRef();
-    const [height, setHeight] = useState(0);
+    const [Height, setHeight] = useState(0);
      
-    useEffect(()=>{
+    useEffect( () => {
          if(topSideBarRef.current){
              setHeight(topSideBarRef.current.scrollHeight);
          }
@@ -24,7 +24,7 @@ const Sidebar = () =>{
                     Join Conversations
                 </Divider>
             </div>
-        <ChatRoomList aboveElHeight={height} />
+        <ChatRoomList aboveElHeight={Height} />
         </div>
 
     );

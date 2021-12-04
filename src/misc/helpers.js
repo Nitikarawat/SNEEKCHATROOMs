@@ -8,19 +8,19 @@ export function getNameInitials(name) {
 
   return splitName[0][0];
 }
-/* 
+ 
 // export function transformToArr(snapVal) {
-//  return snapVal ? Object.keys(snapVal) : [];
+// return snapVal ? Object.keys(snapVal) : [];
 // }
 
-// export function transformToArrWithId(snapVal) {
-//  return snapVal
- //   ? Object.keys(snapVal).map(roomId => {
- //       return { ...snapVal[roomId], id: roomId };
-  //    })
-   // : [];
-// }
-
+ export function transformToArrWithId(snapVal) {
+        return snapVal
+        ? Object.keys(snapVal).map(roomId => {
+              return { ...snapVal[roomId], id: roomId };
+      })
+    : [];
+ }
+/*
 // export async function getUserUpdates(userId, keyToUpdate, value, db) {
 // const updates = {};
 
