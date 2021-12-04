@@ -13,7 +13,7 @@ const ProviderBlock = () =>
             {isConnected['google.com'] && (
                 <Tag color ="green">
                   <Icon icon='google' />
-                     Connected
+                       -  connected
                 </Tag>
             )}
     
@@ -22,7 +22,7 @@ const ProviderBlock = () =>
             {!isConnected['google.com'] && (
                 <Button block color='green'>
                     <Icon icon='google'/>
-                    Link to Google
+                      Link to Google
                 </Button>
             )}
         </div>

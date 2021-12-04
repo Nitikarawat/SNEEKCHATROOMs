@@ -119,6 +119,7 @@ const AvatarUploadBtn = () => {
           </Modal.Body>
           <Modal.Footer>
             <Button
+            color="green"
               block
               appearance="ghost"
               onClick={onUploadClick}

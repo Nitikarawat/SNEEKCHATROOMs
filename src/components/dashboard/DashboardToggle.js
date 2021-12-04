@@ -17,7 +17,7 @@ const DashboardToggle = () =>{
 
     return(
         <>
-        <Button block color = "yellow" onClick={open}>
+        <Button block color = "orange" onClick={open}>
             <Icon icon = "dashboard" />
             Dashboard
         </Button>
