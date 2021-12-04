@@ -15,7 +15,7 @@ const ProviderBlock = () =>
                   <Icon icon='google' />
                      Connected
                 </Tag>
-            )};
+            )}
     
 
         <div className="mt-2">
@@ -24,7 +24,7 @@ const ProviderBlock = () =>
                     <Icon icon='google'/>
                     Link to Google
                 </Button>
-            )};
+            )}
         </div>
 
         </div>
