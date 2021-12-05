@@ -16,6 +16,7 @@ export function getNameInitials(name) {
       })
     : [];
  }
+  // Index not defined, add ".indexOn": "author/uid", for path "/messages", to the rules
 
 export async function getUserUpdates(userId, keyToUpdate, value, db) {
   const updates = {};
@@ -23,9 +24,8 @@ export async function getUserUpdates(userId, keyToUpdate, value, db) {
   updates[`/profiles/${userId}/${keyToUpdate}`] = value;
 
   const getMsgs = db.ref('/messages').orderByChild('author/uid').equalTo(userId).once('value');
-  const getRooms =db.ref('/rooms').orderByChild('last/author/uid').equalTo(userId).once('value');
+  const getRooms =db.ref('/rooms').orderByChild('lastMessage/author/uid').equalTo(userId).once('value');
  
-  // Index not defined, add ".indexOn": "author/uid", for path "/messages", to the rules
 
  const [mSnap, rSnap] = await Promise.all([getMsgs, getRooms]);
  mSnap.forEach(msgSnap => {
@@ -37,7 +37,7 @@ export async function getUserUpdates(userId, keyToUpdate, value, db) {
    });
  
     return updates;
-}
+};
 /*
  export function groupBy(array, groupingKeyFn) {
   return array.reduce((result, item) => {
