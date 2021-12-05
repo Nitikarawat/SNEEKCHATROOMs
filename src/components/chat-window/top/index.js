@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useMediaQuery } from '../../../misc/custom.hooks';
 import { useCurrentRoom } from "../../../context/current-room.context";
 import RoomInfoBtnModal from "./RoomInfoBtnModal";
+import EditRoomBtnDrawer from "./EditRoomBtnDrawer";
 
 const Top = () =>
 {
@@ -29,7 +30,7 @@ const Top = () =>
           <span className="text-disappear">{name}</span>
         </h4>
         <ButtonToolbar className="ws-nowrap">
-         Hello
+         <EditRoomBtnDrawer/>
         </ButtonToolbar>
         </div>
 
