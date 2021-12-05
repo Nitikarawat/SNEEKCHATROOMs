@@ -10,7 +10,7 @@ const RoomInfoBtnModal = () => {
 
   return (
     <>
-      <Button appearance="link" className="px-0" onClick={open}>
+      <Button appearance="link" className="px-0 text-center" onClick={open}>
         Room information
       </Button>
       <Modal show={isOpen} onHide={close}>
@@ -22,7 +22,7 @@ const RoomInfoBtnModal = () => {
           <p>{description}</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button block onClick={close}>
+          <Button block onClick={close} color="green"> 
             Close
           </Button>
         </Modal.Footer>

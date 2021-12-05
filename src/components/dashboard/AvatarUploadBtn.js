@@ -102,7 +102,7 @@ const AvatarUploadBtn = () => {
         </label>
 
         <Modal show={isOpen} onHide={close}>
-          <Modal.Header>
+          <Modal.Header className="text-center">
             <Modal.Title>Adjust and upload new avatar</Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -122,9 +122,8 @@ const AvatarUploadBtn = () => {
           </Modal.Body>
           <Modal.Footer>
             <Button
-            color="green"
+              color="green"
               block
-              appearance="ghost"
               onClick={onUploadClick}
               disabled={isLoading}
             >

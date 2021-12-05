@@ -67,7 +67,7 @@ const CreateRoomBtnModal = () =>{
             </Button>
 
             <Modal show={isOpen} onHide={close}>
-                <Modal.Header>
+                <Modal.Header className="text-center">
                  <Modal.Title>
                      New Chat Room
                  </Modal.Title>
@@ -87,7 +87,7 @@ const CreateRoomBtnModal = () =>{
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button color="green"  appearance="ghost" block onClick={onSubmit} disabled={isLoading}>
+                    <Button color="green" block onClick={onSubmit} disabled={isLoading}>
                         Create New Chat Room
                     </Button>
                 </Modal.Footer>

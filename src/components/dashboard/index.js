@@ -46,7 +46,7 @@ const Dashboard = ({ onSignOut }) => {
       </Drawer.Body>
 
       <Drawer.Footer>
-        <Button block color="red" onClick={onSignOut}>
+        <Button block onClick={onSignOut} color="orange">
           Sign out
         </Button>
       </Drawer.Footer>
