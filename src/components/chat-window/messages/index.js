@@ -1,7 +1,8 @@
+/* eslint-disable consistent-return */
 import React, { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Alert } from "rsuite";
-import {auth, database} from "../../../misc/firebase";
+import {auth, database, storage} from "../../../misc/firebase";
 import { transformToArrWithId } from "../../../misc/helpers";
 import MessageItem from "./MessageItem";
 
@@ -84,7 +85,7 @@ const Messages = () =>
 
 
   const handleDelete = useCallback(
-    async (msgId) => {
+    async (msgId, file) => {
       // eslint-disable-next-line no-alert
       if (!window.confirm('Delete this message?')) {
         return;
@@ -111,17 +112,17 @@ const Messages = () =>
         await database.ref().update(updates);
         Alert.info('Message deleted');
       } catch (err) {
-       Alert.error(err.message);
+       return Alert.error(err.message);
       }
 
-/*      if (file) {
+   if (file) {
         try {
-          const fileRef = storageRef(storage, file.url);
-          await deleteObject(fileRef);
+          const fileRef = storage.refFromURL(file.url);
+          await fileRef.delete();
         } catch (err) {
           Alert.error(err.message);
         }
-      } */
+      } 
     },
     
     [chatId, messages]
@@ -132,7 +133,14 @@ const Messages = () =>
 return( 
     <ul className='msg-list custom-scroll'>
         {isChatEmpty && <li>No messages yet</li>}
-        {canShowMessages && messages.map(msg => <MessageItem key={msg.id} message={msg} handleAdmin={handleAdmin} handleLike={handleLike} handleDelete={handleDelete}/>)}
+        {canShowMessages && messages.map(
+          msg => <MessageItem 
+          key={msg.id} 
+          message={msg} 
+          handleAdmin={handleAdmin} 
+          handleLike={handleLike} 
+          handleDelete={handleDelete}/>
+          )}
     </ul>
     );
 };
