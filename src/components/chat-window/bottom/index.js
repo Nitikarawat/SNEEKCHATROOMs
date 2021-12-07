@@ -5,6 +5,7 @@ import { useParams } from 'react-router';
 import firebase from 'firebase';
 import { useProfile } from '../../../context/profile.context';
 import { database } from '../../../misc/firebase';
+import AttachmentBtnModal from './AttachmentBtnModal';
 
 
 function assembleMessage(profile, chatId) {
@@ -109,7 +110,7 @@ const Bottom = () => {
   return (
     <div>
       <InputGroup>
-        
+        <AttachmentBtnModal / >
         <Input
           placeholder="Write a new message here..."
           value={input}
