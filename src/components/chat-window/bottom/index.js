@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { InputGroup, Input, Icon, Alert } from 'rsuite';
-import { serverTimestamp, ref, push, update } from 'firebase/database';
+// import { serverTimestamp, ref, push, update } from 'firebase/database';
 import { useParams } from 'react-router';
 import firebase from 'firebase';
 import { useProfile } from '../../../context/profile.context';
@@ -71,46 +71,45 @@ const Bottom = () => {
     if (ev.keyCode === 13) {
       ev.preventDefault();
       onSendClick();
-    }
+    }  
   };
 
-  /* const afterUpload = useCallback(
-    async files => {
+  const afterUpload = useCallback(
+    async (files) => {
       setIsLoading(true);
 
       const updates = {};
 
       files.forEach(file => {
-        const msgData = assembleMessage(profile, window.chatId);
+        const msgData = assembleMessage(profile, chatId);
         msgData.file = file;
-
-        const messageId = push(ref(database, 'messages')).key;
-
+        const messageId = database.ref('messages').push().key;   
         updates[`/messages/${messageId}`] = msgData;
       });
 
       const lastMsgId = Object.keys(updates).pop();
 
-      updates[`/rooms/${window.chatId}/lastMessage`] = {
+      updates[`/rooms/${chatId}/lastMessage`] = {
         ...updates[lastMsgId],
         msgId: lastMsgId,
       };
 
       try {
-        await update(ref(database), updates);
+        await database.ref().update(updates);
         setIsLoading(false);
-      } catch (err) {
+      } 
+      catch (err) {
         setIsLoading(false);
         Alert.error(err.message);
       }
     },
-    [profile]
-  );
-*/
+    [chatId, profile]
+  ); 
+
   return (
     <div>
       <InputGroup>
-        <AttachmentBtnModal / >
+        <AttachmentBtnModal afterUpload={afterUpload} / >
         <Input
           placeholder="Write a new message here..."
           value={input}
@@ -132,6 +131,3 @@ const Bottom = () => {
 };
 
 export default Bottom;
-// <AudioMsgBtn afterUpload={afterUpload} />
-
-// <AttachmentBtnModal afterUpload={afterUpload} />

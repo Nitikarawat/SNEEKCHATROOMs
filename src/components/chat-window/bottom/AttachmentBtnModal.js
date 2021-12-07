@@ -8,7 +8,7 @@ import { storage } from "../../../misc/firebase";
 const MAX_FILE_SIZE = 1000 * 1024 * 5; // in bytes
 
 
-const AttachmentBtnModal = ( { afterUpload}) =>{
+const AttachmentBtnModal = ( { afterUpload} ) =>{
     const { chatId } = useParams();
  
     const { isOpen, close, open } = useModalState();
